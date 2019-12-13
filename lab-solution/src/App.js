@@ -24,8 +24,7 @@ class App extends React.PureComponent {
       todoList.push({
         id: counter, 
         task: this.state.todoItem, 
-        completed: false,
-        textDecoration: 'none'
+        completed: false
       })
   
       this.setState({
@@ -49,13 +48,7 @@ class App extends React.PureComponent {
 
   handleCompleteIncompleteItem = (index) => {
     const allItems = [...this.state.allTodos]
-    allItems[index].completed = !allItems[index].completed 
-
-    if (allItems[index].completed) {
-      allItems[index].textDecoration = 'line-through'
-    } else {
-      allItems[index].textDecoration = 'none'
-    }
+    allItems[index].completed = !allItems[index].completed;
 
     this.setState ({allTodos: allItems})
   }

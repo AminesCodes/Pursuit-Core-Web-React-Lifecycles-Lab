@@ -31,9 +31,13 @@ export default class TodoItem extends React.Component {
 
     // ############################ RENDER ##########################
     render() {
+        let style = {}
+        if (this.props.completed) {
+            style = {textDecoration: 'line-through'}
+        }
         return (
             <div>
-                <span onClick={this.handleClick} style={{textDecoration: this.props.textDecoration}}>{this.props.text}</span>
+                <span onClick={this.handleClick} style={style}>{this.props.text}</span>
                 <button onClick={() => this.props.deleteBtn(this.props.target)}>X</button>
             </div>
         )
